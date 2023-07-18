@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage(" execute Ansible") {
+           steps {
+                ansiblePlaybook (
+                    installation:'ansible',
+                    inventory:'', 
+                    playbook: '/usr/bin/ansible-playbook'
+                )
+            }    
+        }  
+    }
+}
